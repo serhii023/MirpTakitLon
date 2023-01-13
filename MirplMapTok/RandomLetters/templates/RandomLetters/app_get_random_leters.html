@@ -2,11 +2,8 @@
 
 {% block content %}
     
-    <div>from {{ size_from }}</div>
-    <div>to {{ size_to }}</div>
-
-    {% for i in range(amount) %}
-        <a href="">i</a>
+    {% for name in name_list %}
+        <div class="random-name">{{name}}</div>
     {% endfor %}
 
 {% endblock %}

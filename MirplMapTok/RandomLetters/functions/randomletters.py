@@ -5,7 +5,7 @@ import string
 # ALPHA_NUMERIC = string.ascii_letters + string.digits
 
 def randname(size_from: int=50, size_to: int=70):
-    """Returns random string-name with size in [50, 70]
+    """Returns random string-name with size in [size_from, size_to]
     
     Args:
         size_from (int): lower bounder of random string name, must be greather 0.
@@ -24,7 +24,6 @@ def randname(size_from: int=50, size_to: int=70):
 def main():
     for i in range(20):
         print(randname(size_from=50, size_to=60))
-
 
 if __name__ == "__main__":
     main()
