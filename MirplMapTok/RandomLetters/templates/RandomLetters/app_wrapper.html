@@ -1,5 +1,4 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,12 +8,24 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="get">
-        <div>From</div>
-        <input type="number" min="1" max="10000">
-        <div> - </div>
-        <div>to</div>
-        <input type="number" min="1" max="10000">
+    <form action="/random-letters/print-random-leters/" method="get">
+        <div id="form-limitations">
+            <label for="size_from">From</label>
+            <input id="size_from" name="size_from" type="number" min="1" max="10000" value="{{size_from}}">
+            <label for="size_to">to</label>
+            <input id="size_to" name="size_to" type="number" min="1" max="10000" value="{{size_to}}">
+        </div>
+
+        <div id="form-amount">
+            <label for="amount">Amount</label>
+            <input id="amount" name="amount" type="number" min="1" max="100" value="{{amount}}">
+        </div>
+
+        <div id="form-submit">
+            <input type="submit" value="CREATE">
+        </div>
     </form>
+
+    {% block content %}{% endblock %}
 </body>
 </html>
