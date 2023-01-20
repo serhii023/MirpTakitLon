@@ -2,8 +2,10 @@
 
 {% block content %}
     
+<ul class="list-group">
     {% for name in name_list %}
-        <div class="random-name">{{name}}</div>
+        <li class="list-group-item random-name", style="word-break: break-all;">{{name}}</li>
     {% endfor %}
+</ul>
 
 {% endblock %}

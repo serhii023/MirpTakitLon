@@ -1,34 +1,56 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'RandomLetters/style/app_wrapper.css' %}">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Letters</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <form action="/random-letters/print-random-leters/" method="get">
-        <div id="form-limitations">
-            <label for="size_from">From</label>
-            <input id="size_from" name="size_from" type="number" min="1" max="10000" value="{{size_from}}">
-            <label for="size_to">to</label>
-            <input id="size_to" name="size_to" type="number" min="1" max="10000" value="{{size_to}}">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MirplMapTok</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="#">Random Letters</a></li>
+                <!-- <li><a href="#">Page 2</a></li> -->
+                <!-- <li><a href="#">Page 3</a></li> -->
+            </ul>
         </div>
+    </nav>
 
-        <div id="form-amount">
-            <label for="amount">Amount</label>
-            <input id="amount" name="amount" type="number" min="1" max="100" value="{{amount}}">
-        </div>
 
-        <div id="form-submit">
-            <input type="submit" value="CREATE">
-        </div>
-    </form>
-    <article>
+    <div class="container text-center">
+        <h2>Type size of new text</h2>
+        <p>Size should be not so long and not so small, and if you will broke something, it is your fault</p>
+        <form class="form-inline" action="/random-letters/print-random-leters/" method="get">
+            <div id="form-limitations form-group">
+                <label for="size_from">From:</label>
+                <input id="size_from" name="size_from" type="number" class="form-control" min="1" max="100" value="{{size_from}}">
+                <label for="size_to">To:</label>
+                <input id="size_to" name="size_to" type="number" class="form-control" min="1" max="100" value="{{size_to}}">
+            </div>
+            
+            <div id="form-amount form-group">
+                <label for="amount">Amount:</label>
+                <input id="amount" name="amount" type="number" class="form-control" min="1" max="100" value="{{amount}}">
+            </div>
+            
+            <div id="form-submit form-group">
+                <button type="submit" class="form-control btn btn-default">CREATE</button>
+            </div>
+        </form>
+    </div>
+    
+    <article class="text-center">
         {% block content %}
         
         {% endblock %}
     </article>
+
 </body>
 </html>
